@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: #051804;
   --foreground: #171717;
 }
 
@@ -10,17 +10,60 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #171717;
+  --accent: rgb(113, 182, 189);
+  --white: #fff;
+  --background: #051804;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--white);
+
+  & .logo {
+    font-size: 2rem;
+    padding-inline: 1rem;
+    color: black;
+    background-color: white;
+  }
+}
+
+li.active {
+  color: var(--accent);
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  & h1 {
+    text-shadow: black 0px 0px 0.15rem;
+  }
+
+  & span {
+    gap: 2rem;
+    & > span {
+      background-color: black;
+      padding: 0.5rem 1rem;
+      border: solid 0.05rem white;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  }
+}
+
+h1 {
+  font-size: 10rem;
+  margin-bottom: 1rem;
 }
