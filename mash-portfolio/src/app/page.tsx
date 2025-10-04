@@ -1,42 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <header className="flex justify-center p-10">
-        <div className="w-1/2 flex justify-between">
-          <div className="logo flex items-center">MASH</div>
-          <nav className="flex">
-            <ul
-              className={`container flex h-screen flex-col items-center justify-center gap-8 py-2 text-center sm:flex sm:h-auto sm:flex-row`}
-            >
-              <li
-                role="button"
-                tabIndex={0}
-                className="active cursor-pointer text-tertiary transition-colors hover:text-white"
-              >
-                Home
-              </li>
-              <li
-                role="button"
-                tabIndex={0}
-                className="cursor-pointer text-tertiary transition-colors hover:text-white"
-              >
-                Info
-              </li>
-              <li
-                role="button"
-                tabIndex={0}
-                className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-auto"
-              >
-                Projects
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
       <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
         <section className="backdrop pt-10">
           <div>
@@ -47,7 +16,10 @@ export default function Home() {
             </span>
           </div>
         </section>
-        <section className="flex flex-col items-center justify-center">
+        <section
+          id="projects"
+          className="flex flex-col items-center justify-center"
+        >
           <h2 className="pt-20  uppercase">Projects</h2>
           <div className="flex justify-center items-center gap-4 mb-10">
             <svg
@@ -103,65 +75,76 @@ export default function Home() {
             </svg>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div
-              className="project-card cursor-pointer"
-              role="button"
-              tabIndex={0}
-            >
-              <span className="">Graphic Design</span>
-              <Image
-                className="my-10"
-                src={'/projects-1.avif'}
-                alt="Image of the BMW project"
-                width={600}
-                height={600}
-              />
-            </div>
-            <div
-              className="project-card cursor-pointer"
-              role="button"
-              tabIndex={0}
-            >
-              <span className="">Editing</span>
-              <Image
-                className="my-10"
-                src={'/projects-2.avif'}
-                alt="Image of the Editing project"
-                width={600}
-                height={600}
-              />
-            </div>
-            <div
-              className="project-card cursor-pointer"
-              role="button"
-              tabIndex={0}
-            >
-              <span className="">Fashion</span>
-              <Image
-                className="my-10"
-                src={'/projects-3.avif'}
-                alt="Image of the Fashion project"
-                width={600}
-                height={600}
-              />
-            </div>
-            <div
-              className="project-card cursor-pointer"
-              role="button"
-              tabIndex={0}
-            >
-              <span className="">Film Making</span>
-              <Image
-                className="my-10"
-                src={'/projects-4.avif'}
-                alt="Image of the Film making project"
-                width={500}
-                height={500}
-              />
-            </div>
+            <Link href="/projects/graphic-design">
+              <div
+                className="project-card cursor-pointer"
+                role="button"
+                tabIndex={0}
+              >
+                <span className="">Graphic Design</span>
+                <Image
+                  className="my-10"
+                  src={'/projects-1.avif'}
+                  alt="Image of the BMW project"
+                  width={600}
+                  height={600}
+                />
+              </div>
+            </Link>
+            <Link href="/projects/editing">
+              <div
+                className="project-card cursor-pointer"
+                role="button"
+                tabIndex={0}
+              >
+                <span className="">Editing</span>
+                <Image
+                  className="my-10"
+                  src={'/projects-2.avif'}
+                  alt="Image of the Editing project"
+                  width={600}
+                  height={600}
+                />
+              </div>
+            </Link>
+            <Link href="/projects/fashion">
+              <div
+                className="project-card cursor-pointer"
+                role="button"
+                tabIndex={0}
+              >
+                <span className="">Fashion</span>
+                <Image
+                  className="my-10"
+                  src={'/projects-3.avif'}
+                  alt="Image of the Fashion project"
+                  width={600}
+                  height={600}
+                />
+              </div>
+            </Link>
+            <Link href="/projects/film-making">
+              <div
+                className="project-card cursor-pointer"
+                role="button"
+                tabIndex={0}
+              >
+                <span className="">Film Making</span>
+                <Image
+                  className="my-10"
+                  src={'/projects-4.avif'}
+                  alt="Image of the Film making project"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </Link>
           </div>
         </section>
-        <section className="flex flex-col items-center justify-center">
+        <section
+          id="info"
+          className="flex flex-col items-center justify-center"
+        >
           <h2 className="pt-20  uppercase">Info</h2>
           <div className="flex justify-center items-center gap-4 mb-10">
             <svg
@@ -216,6 +199,7 @@ export default function Home() {
               </g>
             </svg>
           </div>
+
           <p className="text-center w-3/4">
             A jack of all trades in design and art, based in Amman, Jordan. I am
             available for design collaborations and projects. Reach out to
