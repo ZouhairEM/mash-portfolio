@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function Header() {
   return (
     <header className="flex justify-center p-10">
@@ -21,16 +19,16 @@ export default function Header() {
             <li
               role="button"
               tabIndex={0}
-              className="cursor-pointer text-tertiary transition-colors hover:text-white"
+              className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-auto"
             >
-              <a href="#info">Info</a>
+              <a href="#projects">Projects</a>
             </li>
             <li
               role="button"
               tabIndex={0}
-              className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-auto"
+              className="cursor-pointer text-tertiary transition-colors hover:text-white"
             >
-              <a href="#projects">Projects</a>
+              <a href="#info">Info</a>
             </li>
           </ul>
         </nav>

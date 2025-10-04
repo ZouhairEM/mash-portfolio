@@ -2,25 +2,52 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion'; // Import 'motion' and 'useInView'
+import { useRef } from 'react'; // Import 'useRef'
 
 export default function Home() {
+  // Animation setup for the "Info" section (scroll-triggered)
+  const infoRef = useRef(null);
+  const isInfoInView = useInView(infoRef, { once: true, amount: 0.3 });
+
+  const infoVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
+  // Animation setup for the "Portfolio" header section (load-triggered)
+  const portfolioVariants = {
+    hidden: { y: -50, opacity: 0 }, // Starts 50px above the final position
+    visible: { y: 0, opacity: 1 }, // Ends at its natural position
+  };
+
   return (
     <>
       <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
+        {/* Portfolio Section: Load-triggered animation applied to the inner motion.div */}
         <section className="backdrop pt-10">
-          <div>
-            <h1>PORTFOLIO</h1>
-            <span className="flex justify-center items-center flex-col">
-              <span>MOHAMMAD MASHOUKA</span>
-              <span>DESIGNER - ARTIST</span>
-            </span>
+          <div className="credit-roll">
+            <motion.div
+              id="portfolio"
+              initial="hidden"
+              animate="visible"
+              variants={portfolioVariants}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            >
+              <h1>PORTFOLIO</h1>
+              <span className="flex justify-center items-center flex-col">
+                <span>MOHAMMAD MASHOUKA</span>
+                <span>DESIGNER - ARTIST</span>
+              </span>
+            </motion.div>
           </div>
         </section>
+
         <section
           id="projects"
           className="flex flex-col items-center justify-center"
         >
-          <h2 className="pt-20  uppercase">Projects</h2>
+          <h2 className="pt-20 uppercase">Projects</h2>
           <div className="flex justify-center items-center gap-4 mb-10">
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -141,11 +168,17 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <section
+
+        <motion.section
           id="info"
+          ref={infoRef}
           className="flex flex-col items-center justify-center"
+          initial="hidden"
+          animate={isInfoInView ? 'visible' : 'hidden'}
+          variants={infoVariants}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="pt-20  uppercase">Info</h2>
+          <h2 className="pt-20 uppercase">Info</h2>
           <div className="flex justify-center items-center gap-4 mb-10">
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -220,7 +253,7 @@ export default function Home() {
               height={40}
             />
           </button>
-        </section>
+        </motion.section>
         <svg
           preserveAspectRatio="xMidYMid meet"
           data-bbox="19 56 162 89"

@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 
 * {
-  /* outline: solid 1px lime; */
+  outline: solid 1px lime;
 }
 
 @layer base {
@@ -51,7 +51,7 @@
   }
 
   .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -84,7 +84,7 @@
     color: white;
     position: relative;
 
-    & div {
+    & .credit-roll {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -175,11 +175,11 @@
     padding: 0.5rem 1rem;
     margin: 1rem;
     cursor: pointer;
-    border: solid 0.15rem transparent;
+    border: solid 0.1rem transparent;
 
     &:hover {
       background-color: var(--tertiary);
-      border: solid 0.15rem var(--background);
+      border: solid 0.1rem var(--background);
     }
   }
 
