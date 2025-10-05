@@ -1,11 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
     <header className="flex justify-center p-4 sm:p-10">
       <div className="container w-full flex justify-between items-center">
-        <div className="logo flex items-center text-xl font-bold">
-          <Link href="/">MASH</Link>
+        <div className="flex items-center text-xl font-bold">
+          <Link href="/">
+            <Image
+              src={'/mash-logo.png'}
+              alt="Mash's logo"
+              width={130}
+              height={130}
+            />
+          </Link>
         </div>
 
         <nav className="hidden sm:flex">
