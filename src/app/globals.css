@@ -173,7 +173,7 @@
     transition:
       all 0.2s ease,
       visibility 0s;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem !important;
     background: var(--background);
     width: 7%;
     color: white;
