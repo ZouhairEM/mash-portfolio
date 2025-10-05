@@ -48,6 +48,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    font-family: var(--font-roboto), sans-serif;
   }
 
   .container {
@@ -180,6 +181,7 @@
     margin: 1rem;
     cursor: pointer;
     border: solid 0.1rem transparent;
+    min-width: 7rem;
 
     &:hover {
       background-color: var(--tertiary);
@@ -190,6 +192,7 @@
   .project-header {
     color: var(--orange);
     font-weight: bold;
+    margin-bottom: 2rem;
   }
 }
 

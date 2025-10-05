@@ -63,7 +63,6 @@ export default function FilmMaking() {
                 width={500}
                 height={500}
               />
-              <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">
                 An advertisement for the Crown Prince Foundation where I was
                 assistant producer.
@@ -82,7 +81,6 @@ export default function FilmMaking() {
                 width={500}
                 height={500}
               />
-              <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">
                 Art department for Dana Salah music video
               </p>
@@ -100,7 +98,6 @@ export default function FilmMaking() {
                 width={500}
                 height={500}
               />
-              <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">
                 An advertisement for Ingot brokers with Raphael Varane where I
                 was assistant producer.
@@ -120,7 +117,6 @@ export default function FilmMaking() {
                 height={275}
                 className="mx-auto"
               />
-              <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">
                 Assistant Producer and extra for Mazaya
               </p>
@@ -139,7 +135,6 @@ export default function FilmMaking() {
                 height={275}
                 className="mx-auto"
               />
-              <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">World Cup campaign.</p>
             </Link>
           </div>
