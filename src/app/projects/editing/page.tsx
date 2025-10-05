@@ -5,7 +5,21 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-function AnimatedImage({ src, alt, width, height, className }) {
+interface AnimatedImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}
+
+function AnimatedImage({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: AnimatedImageProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const variants = {
@@ -136,7 +150,7 @@ export default function Editing() {
               />
               <span className="text-white text-center font-bold">View Now</span>
               <p className="text-center">
-                Edit for Mazaya's New Years campaign.
+                Edit for Mazayas New Years campaign.
               </p>
             </Link>
           </div>

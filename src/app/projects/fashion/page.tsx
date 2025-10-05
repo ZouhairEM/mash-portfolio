@@ -5,7 +5,21 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-function AnimatedImage({ src, alt, width, height, className }) {
+interface AnimatedImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}
+
+function AnimatedImage({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: AnimatedImageProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 }); // Trigger when 20% visible
 
@@ -54,9 +68,9 @@ export default function Fashion() {
         <div className="flex flex-col items-center gap-4 my-10 justify-center">
           <p className="w-4/10 text-center">
             My participation of a fashion show where every designer was meant to
-            capture a country's essence, my designs were to capture the essence
-            of Egypt through the daily used demotic hieroglyphics for the men
-            attire.
+            capture the essence of a country, my designs were to capture the
+            essence of Egypt through the daily used demotic hieroglyphics for
+            the men attire.
           </p>
           <p className="w-4/10 text-center">
             As for the woman I captured the glory of the most powerful woman in

@@ -5,7 +5,21 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-function AnimatedImage({ src, alt, width, height, className }: any) {
+interface AnimatedImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}
+
+function AnimatedImage({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: AnimatedImageProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const variants = {

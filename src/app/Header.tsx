@@ -1,9 +1,11 @@
+import Link from 'next/link';
+
 export default function Header() {
   return (
     <header className="flex justify-center p-4 sm:p-10">
       <div className="container w-full flex justify-between items-center">
         <div className="logo flex items-center text-xl font-bold">
-          <a href="/">MASH</a>
+          <Link href="/">MASH</Link>
         </div>
 
         <nav className="hidden sm:flex">
@@ -20,14 +22,14 @@ export default function Header() {
               tabIndex={0}
               className="cursor-pointer text-tertiary transition-colors hover:text-white"
             >
-              <a href="/#projects">Projects</a>
+              <Link href="/#projects">Projects</Link>
             </li>
             <li
               role="button"
               tabIndex={0}
               className="cursor-pointer text-tertiary transition-colors hover:text-white"
             >
-              <a href="/#info">Info</a>
+              <Link href="/#info">Info</Link>
             </li>
           </ul>
         </nav>

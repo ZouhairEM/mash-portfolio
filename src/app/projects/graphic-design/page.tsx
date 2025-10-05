@@ -10,7 +10,7 @@ interface AnimatedImageProps {
   alt: string;
   width: number;
   height: number;
-  className: string;
+  className?: string;
 }
 
 function AnimatedImage({
