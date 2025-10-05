@@ -2,11 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion'; // Import 'motion' and 'useInView'
-import { useRef } from 'react'; // Import 'useRef'
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Home() {
-  // Animation setup for the "Info" section (scroll-triggered)
   const infoRef = useRef(null);
   const isInfoInView = useInView(infoRef, { once: true, amount: 0.3 });
 
@@ -15,16 +14,14 @@ export default function Home() {
     visible: { y: 0, opacity: 1 },
   };
 
-  // Animation setup for the "Portfolio" header section (load-triggered)
   const portfolioVariants = {
-    hidden: { y: -50, opacity: 0 }, // Starts 50px above the final position
-    visible: { y: 0, opacity: 1 }, // Ends at its natural position
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
     <>
       <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
-        {/* Portfolio Section: Load-triggered animation applied to the inner motion.div */}
         <section className="backdrop pt-10">
           <div className="credit-roll">
             <motion.div
@@ -110,7 +107,6 @@ export default function Home() {
               >
                 <span className="">Graphic Design</span>
                 <Image
-                  className="my-10"
                   src={'/projects-1.avif'}
                   alt="Image of the BMW project"
                   width={600}
@@ -126,7 +122,6 @@ export default function Home() {
               >
                 <span className="">Editing</span>
                 <Image
-                  className="my-10"
                   src={'/projects-2.avif'}
                   alt="Image of the Editing project"
                   width={600}
@@ -142,7 +137,6 @@ export default function Home() {
               >
                 <span className="">Fashion</span>
                 <Image
-                  className="my-10"
                   src={'/projects-3.avif'}
                   alt="Image of the Fashion project"
                   width={600}
@@ -158,7 +152,6 @@ export default function Home() {
               >
                 <span className="">Film Making</span>
                 <Image
-                  className="my-10"
                   src={'/projects-4.avif'}
                   alt="Image of the Film making project"
                   width={500}
@@ -239,11 +232,13 @@ export default function Home() {
             discuss your creative needs.
           </p>
           <p className="mt-10">
-            Email: mohammadmashouka@gmail.com Tel: +962792944744
+            <a href="mailto:mohammadmashouka@gmail.com">
+              Email: mohammadmashouka@gmail.com Tel: +962792944744
+            </a>
           </p>
-          <button
-            className="cursor-pointer"
-            onClick={() => console.log('Instagram clicked')}
+          <a
+            href="https://www.instagram.com/mohammadmashoukaa/"
+            target="_blank"
           >
             <Image
               className="my-10"
@@ -252,7 +247,7 @@ export default function Home() {
               width={40}
               height={40}
             />
-          </button>
+          </a>
         </motion.section>
         <svg
           preserveAspectRatio="xMidYMid meet"
