@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.13.4",
     "framer-motion": "^12.23.22",
     "next": "15.4.4",
     "prettier-plugin-tailwindcss": "^0.6.14",
