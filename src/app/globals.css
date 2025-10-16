@@ -174,7 +174,8 @@
   body {
     background-color: var(--tertiary);
   }
-  button.back {
+  button.back,
+  button.project-btn {
     transition:
       all 0.2s ease,
       visibility 0s;
@@ -193,24 +194,6 @@
       border: solid 0.1rem var(--background);
     }
   }
-  button.project-btn {
-    transition:
-      all 0.2s ease,
-      visibility 0s;
-    border-radius: 1.5rem !important;
-    /* background: var(--background); */
-    color: white;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    border: solid 0.1em white;
-
-    &:hover {
-      background-color: var(--tertiary);
-      border: solid 0.1rem var(--background);
-    }
-  }
-
   .project-header {
     color: var(--orange);
     font-weight: bold;

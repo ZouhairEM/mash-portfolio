@@ -91,27 +91,8 @@ function SubPagesContent() {
           <span>Back</span>
         </button>
       </Link>
-      <main className="flex flex-col gap-30 container my-10">
-        <div className="flex justify-center">
-          <button
-            className="project-btn"
-            onClick={() => handleNavigation('previous')}
-            disabled={isPreviousDisabled}
-          >
-            <span>Previous project</span>
-          </button>
-
-          <h2 className="text-center mx-10">{projectHeader}</h2>
-
-          <button
-            className="project-btn"
-            onClick={() => handleNavigation('next')}
-            disabled={isNextDisabled}
-          >
-            <span>Next project</span>
-          </button>
-        </div>
-
+      <main className="flex flex-col gap-30 container px-6 my-10">
+        <h2 className="text-center mx-10">{projectHeader}</h2>
         {projects.map((project, index) => {
           const isProjectNumberEven = (index + 1) % 2 === 0;
 
@@ -150,6 +131,23 @@ function SubPagesContent() {
             </div>
           );
         })}
+        <div className="flex justify-between flex-col sm:flex-row">
+          <button
+            className={`${isPreviousDisabled && 'invisible'} project-btn  min-w-full sm:min-w-40`}
+            onClick={() => handleNavigation('previous')}
+            disabled={isPreviousDisabled}
+          >
+            <span>Previous project</span>
+          </button>
+
+          <button
+            className={`${isNextDisabled && 'invisible'} project-btn min-w-full sm:min-w-40`}
+            onClick={() => handleNavigation('next')}
+            disabled={isNextDisabled}
+          >
+            <span>Next project {isNextDisabled}</span>
+          </button>
+        </div>
       </main>
     </>
   );
