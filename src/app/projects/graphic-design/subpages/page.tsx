@@ -2,27 +2,74 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { Suspense } from 'react';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
-export default function SubPages({ searchParams }) {
-  const projectGenre = searchParams.projectGenre;
+function SubPagesContent() {
+  const router = useRouter();
+  const currentSearchParams = useSearchParams();
+  const pathname = usePathname();
 
+  const projectHeader = currentSearchParams.get('projectHeader');
+
+  const match = projectHeader ? projectHeader.match(/Project (\d+)/) : null;
+  const currentProjectNumber = match ? parseInt(match[1], 10) : 1;
+
+  const totalProjects = 5;
+
+  const handleNavigation = (direction) => {
+    let newProjectNumber = currentProjectNumber;
+
+    if (direction === 'next') {
+      if (currentProjectNumber < totalProjects) {
+        newProjectNumber = currentProjectNumber + 1;
+      } else {
+        return;
+      }
+    } else if (direction === 'previous') {
+      if (currentProjectNumber > 1) {
+        newProjectNumber = currentProjectNumber - 1;
+      } else {
+        return;
+      }
+    } else {
+      return;
+    }
+
+    const newProjectHeader = `Project ${newProjectNumber}`;
+    const newProject = String(newProjectNumber);
+
+    const newSearchParams = new URLSearchParams(currentSearchParams.toString());
+
+    newSearchParams.set('projectHeader', newProjectHeader);
+    newSearchParams.set('project', newProject);
+
+    router.push(`${pathname}?${newSearchParams.toString()}`);
+  };
+
+  const projectGenre =
+    currentSearchParams.get('projectGenre') || 'defaultGenre';
+  const project = currentSearchParams.get('project') || 'defaultProject';
   const projects = [
     {
-      title: 'Project Info 1',
+      title: 'Project Info',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-1.avif`,
+      src: `/${projectGenre}/${projectGenre}-${project}.avif`,
     },
     {
-      title: 'Project Info 2',
+      title: 'Project Info',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-2.avif`,
+      src: `/${projectGenre}/${projectGenre}-${project}.avif`,
     },
     {
-      title: 'Project Info 3',
+      title: 'Project Info',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-3.avif`,
+      src: `/${projectGenre}/${projectGenre}-${project}.avif`,
     },
   ];
+
+  const isPreviousDisabled = currentProjectNumber === 1;
+  const isNextDisabled = currentProjectNumber === totalProjects;
 
   return (
     <>
@@ -45,6 +92,26 @@ export default function SubPages({ searchParams }) {
         </button>
       </Link>
       <main className="flex flex-col gap-30 container my-10">
+        <div className="flex justify-center">
+          <button
+            className="project-btn"
+            onClick={() => handleNavigation('previous')}
+            disabled={isPreviousDisabled}
+          >
+            <span>Previous project</span>
+          </button>
+
+          <h2 className="text-center mx-10">{projectHeader}</h2>
+
+          <button
+            className="project-btn"
+            onClick={() => handleNavigation('next')}
+            disabled={isNextDisabled}
+          >
+            <span>Next project</span>
+          </button>
+        </div>
+
         {projects.map((project, index) => {
           const isProjectNumberEven = (index + 1) % 2 === 0;
 
@@ -62,7 +129,9 @@ export default function SubPages({ searchParams }) {
           const imageContent = (
             <div
               className={`col-span-12 md:col-span-8 group ${
-                isProjectNumberEven ? 'md:order-first' : 'md:order-last'
+                isProjectNumberEven
+                  ? 'md:order-first'
+                  : 'md:order-last flex justify-end'
               }`}
             >
               <Image
@@ -75,7 +144,7 @@ export default function SubPages({ searchParams }) {
           );
 
           return (
-            <div className="grid grid-cols-12 gap-4" key={project.title}>
+            <div className="grid grid-cols-12 gap-4" key={index}>
               {textContent}
               {imageContent}
             </div>
@@ -83,5 +152,13 @@ export default function SubPages({ searchParams }) {
         })}
       </main>
     </>
+  );
+}
+
+export default function SubPages() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SubPagesContent />
+    </Suspense>
   );
 }

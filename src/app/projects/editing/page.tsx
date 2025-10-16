@@ -2,25 +2,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 export default function SubPages({ searchParams }) {
-  const projectGenre = searchParams.projectGenre;
+  // @ts-expect-error No Next error
+  const { projectHeader } = React.use(searchParams);
 
   const projects = [
     {
-      title: 'Project Info 1',
+      title: 'Ash Meppers YouTube',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-1.avif`,
-    },
-    {
-      title: 'Project Info 2',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-2.avif`,
-    },
-    {
-      title: 'Project Info 3',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, eos rem alias totam assumenda quis deleniti facilis porro atque provident vitae aperiam placeat tenetur consectetur id explicabo odio est expedita?',
-      src: `/${projectGenre}/${projectGenre}-3.avif`,
+      src: `/editing/editing-1.avif`,
     },
   ];
 
@@ -45,6 +37,8 @@ export default function SubPages({ searchParams }) {
         </button>
       </Link>
       <main className="flex flex-col gap-30 container my-10">
+        <h2 className="text-center">{projectHeader}</h2>
+
         {projects.map((project, index) => {
           const isProjectNumberEven = (index + 1) % 2 === 0;
 
@@ -62,7 +56,9 @@ export default function SubPages({ searchParams }) {
           const imageContent = (
             <div
               className={`col-span-12 md:col-span-8 group ${
-                isProjectNumberEven ? 'md:order-first' : 'md:order-last'
+                isProjectNumberEven
+                  ? 'md:order-first'
+                  : 'md:order-last flex justify-end'
               }`}
             >
               <Image
@@ -75,7 +71,7 @@ export default function SubPages({ searchParams }) {
           );
 
           return (
-            <div className="grid grid-cols-12 gap-4" key={project.title}>
+            <div className="grid grid-cols-12 gap-4" key={project.src}>
               {textContent}
               {imageContent}
             </div>
