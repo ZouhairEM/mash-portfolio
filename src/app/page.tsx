@@ -105,7 +105,7 @@ export default function Home() {
                 role="button"
                 tabIndex={0}
               >
-                <span className="">Graphic Design</span>
+                <span>Graphic Design</span>
                 <Image
                   src={'/projects-1.avif'}
                   alt="Image of the BMW project"

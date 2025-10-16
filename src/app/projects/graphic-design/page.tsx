@@ -72,7 +72,15 @@ export default function GraphicDesign() {
       <h2 className="project-header text-center">Graphic Design</h2>
       <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 grid-auto-rows-[150px]">
-          <Link href="#" className="col-span-2 row-span-1">
+          <Link
+            href={{
+              pathname: '/projects/graphic-design/subpages',
+              query: {
+                projectGenre: 'graphic-design',
+              },
+            }}
+            className="col-span-2 row-span-1"
+          >
             <AnimatedImage
               src={'/graphic-design/graphic-design-1.avif'}
               alt="Graphic Design Example 1"
@@ -82,7 +90,15 @@ export default function GraphicDesign() {
             />
           </Link>
 
-          <Link href="#" className="col-span-2 row-span-2">
+          <Link
+            href={{
+              pathname: '/projects/graphic-design/subpages',
+              query: {
+                projectGenre: 'graphic-design',
+              },
+            }}
+            className="col-span-2 row-span-2"
+          >
             <AnimatedImage
               src={'/graphic-design/graphic-design-2.avif'}
               alt="Graphic Design Example 2"
@@ -92,7 +108,15 @@ export default function GraphicDesign() {
             />
           </Link>
 
-          <Link href="#" className="col-span-2 row-span-3">
+          <Link
+            href={{
+              pathname: '/projects/graphic-design/subpages',
+              query: {
+                projectGenre: 'graphic-design',
+              },
+            }}
+            className="col-span-2 row-span-3"
+          >
             <AnimatedImage
               src={'/graphic-design/graphic-design-3.avif'}
               alt="Graphic Design Example 3"
@@ -102,7 +126,15 @@ export default function GraphicDesign() {
             />
           </Link>
 
-          <Link href="#" className="col-span-2 row-span-4">
+          <Link
+            href={{
+              pathname: '/projects/graphic-design/subpages',
+              query: {
+                projectGenre: 'graphic-design',
+              },
+            }}
+            className="col-span-2 row-span-4"
+          >
             <AnimatedImage
               src={'/graphic-design/graphic-design-4.avif'}
               alt="Graphic Design Example 4"
@@ -112,7 +144,15 @@ export default function GraphicDesign() {
             />
           </Link>
 
-          <Link href="#" className="col-span-2 row-span-3">
+          <Link
+            href={{
+              pathname: '/projects/graphic-design/subpages',
+              query: {
+                projectGenre: 'graphic-design',
+              },
+            }}
+            className="col-span-2 row-span-3"
+          >
             <AnimatedImage
               src={'/graphic-design/graphic-design-5.avif'}
               alt="Graphic Design Example 5"

@@ -131,10 +131,8 @@ export default function FilmMaking() {
 
   const isModalOpen = !!activeVideoSrc;
 
-  // The YouTube link is now for the second video (Dana Salah)
   const DANA_SALAH_YOUTUBE_URL = 'https://www.youtube.com/watch?v=iftQMSMMb0w';
 
-  // This handler is for local .mp4 files (Projects 1, 3, 4, 5)
   const createClickHandlerForMp4 = (imageSrc: string) => {
     const videoPath = imageSrc.replace(/\.avif$/, '.mp4');
     return () => handleOpenModal(videoPath);

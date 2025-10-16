@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 // Import existing fonts
 import { Geist, Geist_Mono, Roboto } from 'next/font/google'; // <-- Add Roboto here
 import './globals.css';
+import './react-slick.css';
 import Header from './Header';
 
 // Configure existing fonts
