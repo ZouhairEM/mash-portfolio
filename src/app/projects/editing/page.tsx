@@ -128,6 +128,11 @@ export default function SubPages() {
   const imageProjects = projects.slice(0, 2);
   const videoProject = projects[2];
 
+  const secondVideoProject = {
+    src: 'https://www.youtube.com/watch?v=DrM89nnNqlU',
+    thumbnailSrc: `/editing/maxresdefault.jpg`, // Placeholder, replace with actual thumbnail if needed
+  };
+
   return (
     <>
       {!isModalOpen && (
@@ -194,7 +199,7 @@ export default function SubPages() {
         {videoProject && (
           <div className="grid grid-cols-12 gap-4">
             <div
-              className="col-span-12 group cursor-pointer project-hoverable p-2 relative flex justify-center" // Added flex justify-center for text positioning
+              className="col-span-6 group cursor-pointer project-hoverable p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(videoProject.src)}
@@ -209,11 +214,35 @@ export default function SubPages() {
                 alt={`Video Project Thumbnail`}
                 width={375}
                 height={375}
-                className="mx-auto" // mx-auto will center the animated image
+                className="mx-auto"
               />
               <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
                 {' '}
-                See sample work
+                Play video
+              </div>
+            </div>
+            <div
+              className="col-span-6 group cursor-pointer project-hoverable p-2 relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(secondVideoProject.src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(secondVideoProject.src);
+                }
+              }}
+            >
+              {/* Line 231: src in AnimatedImage should be an image source (thumbnail) not the video URL */}
+              <AnimatedImage
+                src={secondVideoProject.thumbnailSrc}
+                alt={`YouTube Video Thumbnail`}
+                width={375}
+                height={375}
+                className="mx-auto"
+              />
+              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
+                {' '}
+                Play video
               </div>
             </div>
           </div>

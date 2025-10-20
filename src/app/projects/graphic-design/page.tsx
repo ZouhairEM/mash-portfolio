@@ -153,14 +153,14 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'a2',
+                project: 'moodboards',
               },
             }}
-            className="col-span-2 row-span-3"
+            className="col-span-2 row-span-1"
           >
             <AnimatedImage
-              src={'/graphic-design/graphic-design-5.avif'}
-              alt="Graphic Design Example 5"
+              src={'/graphic-design/moodboards/moodboards-1.avif'}
+              alt="Graphic Design Example 1"
               width={750}
               height={750}
               className="w-full h-full"

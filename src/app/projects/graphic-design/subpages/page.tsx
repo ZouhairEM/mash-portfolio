@@ -15,7 +15,7 @@ function SubPagesContent() {
     2: 'illustrations',
     3: 'nike',
     4: 'hamdulilah',
-    5: 'a2',
+    5: 'moodboards',
   };
 
   const projectHeader = currentSearchParams.get('projectHeader');
@@ -59,58 +59,76 @@ function SubPagesContent() {
 
   const bmw = [
     {
-      title: 'BMW 323i 1981',
-      body: 'The BMW E21 is the first generation of the BMW 3 Series compact executive cars. Initial models were produced with carburetted four-cylinder petrol engines of 1.6 L, 1.8 L, and 2.0 L. <br/> <br/>Fuel-injection was introduced in late 1975 on the 320i – but in 1977, a carburetted inline 6-cylinder engine replaced both the 320 and 320i models.',
+      title: 'Vintage',
+      body: 'This concept advertisement campaign called "choose your style" for BMW is for the launch of the BMW I Vision. The first poster is showing the trending "vintage" style that never dies to target the audience that likes the vintage style.',
       src: '/graphic-design/bmw/bmw-1.avif',
     },
     {
-      title: 'BMW 430i 2024',
-      body: 'Unmissable and undeniably sport. The updated design and consistently compelling power of the BMW 4 Gran Coupe make for an unforgettable experience.<br /><br /> Discover charismatic four-door coupe style and exhilarating performance. Start shopping for one of the 2024 BMW 4 Series Gran Coupes today, or contact your local BMW Center to experience one in person.',
+      title: 'Vintage',
+      body: 'The second poster is targeted to modern owners with the new BMW 430i',
       src: '/graphic-design/bmw/bmw-2.avif',
     },
     {
-      title: 'BMW I VISION DEE - The First Ever Color Changing Car',
-      body: "A machine whose intelligence is emotional rather than artificial. A vehicle with a voice, facial expressions, and true personality. A car that's more than a means of transportation, but an ultimate companion. <br /> <br/>Introducing Dee—the first BMW with a digital soul. Innovative E Ink technology lets you change Dee’s exterior color whenever your mood changes.",
+      title: 'I Vision Dee',
+      body: 'The third poster is the launch of the new minimalistic electric vision dee, titled YOUR STYLE because you can change the cars entire color automatically with a remote.',
       src: '/graphic-design/bmw/bmw-3.avif',
     },
   ];
 
   const illustrations = [
     {
+      title: 'First Teaser',
+      body: 'First teaser for the exhibition.',
       src: '/graphic-design/illustrations/graphic-design-1.avif',
     },
     {
+      title: 'Second Teaser',
+      body: 'Second teaser around the city where it starts to reveal parts of the exhibition.',
       src: '/graphic-design/illustrations/graphic-design-2.avif',
     },
     {
+      title: 'Invitation',
+      body: 'Invitations that have canvas in the middle for people to draw on and share images of.',
+      src: '/graphic-design/illustrations/graphic-design-4.avif',
+    },
+    {
+      title: 'Final poster',
+      body: 'This is the poster with all info.',
       src: '/graphic-design/illustrations/graphic-design-3.avif',
     },
     {
-      src: '/graphic-design/illustrations/graphic-design-3.avif',
-    },
-    {
-      src: '/graphic-design/illustrations/graphic-design-3.avif',
+      title: 'Tickets at door.',
+      body: 'At door tickets for people to buy.',
+      src: '/graphic-design/illustrations/graphic-design-5.avif',
     },
   ];
 
   const nike = [
     {
+      title: 'Concept Announcement',
+      body: 'This is a concept announcement for Nike when they announced they are stopped using kangaroo skin in their leather shoes.',
       src: '/graphic-design/nike/graphic-design-1.avif',
     },
   ];
 
   const hamdulilah = [
     {
+      title: 'Al Hamdulilah',
+      body: 'This typography piece has won in the Typography Day 2023 titled "Al Hamdulilah" which means "Thank God" in Arabic. This is one of the most powerful sayings in Arabic culture I wanted to highlight its importance. The red chain symbolizes the difficulties of life and how it\'s a never ending chain, the black \'Al Hamdulilah\' is showing its power to thank God even in the harshest of times making the difficulties smaller and appreciate the little things.',
       src: '/graphic-design/hamdulilah/graphic-design-1.avif',
     },
   ];
 
-  const a2 = [
+  const moodboards = [
     {
-      src: '/graphic-design/a2/a2-1.avif',
+      title: 'Disposable Matte',
+      body: 'This is an instant cup of matte drink where you pour hot water in it and drink straight out of the cup, it is made of bambo so it is biodegradable.',
+      src: '/graphic-design/moodboards/moodboards-1.avif',
     },
     {
-      src: '/graphic-design/a2/a2-2.avif',
+      title: 'Cereal Box Packaging',
+      body: 'This is a concept package for a cereal which makes it easier to pour cereal as well as the box itself is reusable.',
+      src: '/graphic-design/moodboards/moodboards-2.avif',
     },
   ];
 
@@ -120,20 +138,20 @@ function SubPagesContent() {
       project: bmw,
     },
     illustrations: {
-      projectHeader: 'Art Festival Designs',
+      projectHeader: 'AFC Campaign',
       project: illustrations,
     },
     nike: {
-      projectHeader: 'Nike - Just Save It',
+      projectHeader: 'Nike Announcement',
       project: nike,
     },
     hamdulilah: {
-      projectHeader: 'Mohammad Mashouka Hamdulilah',
+      projectHeader: 'Al Hamdulilah',
       project: hamdulilah,
     },
-    a2: {
-      projectHeader: 'A2 final packaging',
-      project: a2,
+    moodboards: {
+      projectHeader: 'Moodboards',
+      project: moodboards,
     },
   };
 
