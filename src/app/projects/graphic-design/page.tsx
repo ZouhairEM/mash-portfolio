@@ -77,8 +77,7 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'Project 1',
-                project: '1',
+                project: 'bmw',
               },
             }}
             className="col-span-2 row-span-1"
@@ -97,8 +96,7 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'Project 2',
-                project: '2',
+                project: 'nike',
               },
             }}
             className="col-span-2 row-span-2"
@@ -117,8 +115,7 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'Project 3',
-                project: '3',
+                project: 'hamdulilah',
               },
             }}
             className="col-span-2 row-span-3"
@@ -137,8 +134,7 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'Project 4',
-                project: '4',
+                project: 'illustrations',
               },
             }}
             className="col-span-2 row-span-4"
@@ -157,8 +153,7 @@ export default function GraphicDesign() {
               pathname: '/projects/graphic-design/subpages',
               query: {
                 projectGenre: 'graphic-design',
-                projectHeader: 'Project 4',
-                project: '5',
+                projectHeader: 'a2',
               },
             }}
             className="col-span-2 row-span-3"
