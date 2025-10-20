@@ -199,7 +199,7 @@ export default function SubPages() {
         {videoProject && (
           <div className="grid grid-cols-12 gap-4">
             <div
-              className="col-span-6 group cursor-pointer project-hoverable p-2 relative flex justify-center"
+              className="col-span-6 group cursor-pointer project-hoverable h-4/5 p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(videoProject.src)}
@@ -222,7 +222,7 @@ export default function SubPages() {
               </div>
             </div>
             <div
-              className="col-span-6 group cursor-pointer project-hoverable p-2 relative flex justify-center"
+              className="col-span-6 group cursor-pointer project-hoverable h-3/5 p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(secondVideoProject.src)}
@@ -232,7 +232,6 @@ export default function SubPages() {
                 }
               }}
             >
-              {/* Line 231: src in AnimatedImage should be an image source (thumbnail) not the video URL */}
               <AnimatedImage
                 src={secondVideoProject.thumbnailSrc}
                 alt={`YouTube Video Thumbnail`}
