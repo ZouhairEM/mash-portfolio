@@ -134,7 +134,7 @@ function SubPagesContent() {
 
   const projectMap = {
     bmw: {
-      projectHeader: 'BMW designs',
+      projectHeader: 'Concept Advertisements',
       project: bmw,
     },
     illustrations: {
@@ -146,7 +146,7 @@ function SubPagesContent() {
       project: nike,
     },
     hamdulilah: {
-      projectHeader: 'Al Hamdulilah',
+      projectHeader: 'Typography',
       project: hamdulilah,
     },
     moodboards: {
@@ -247,7 +247,6 @@ function SubPagesContent() {
           );
         })}
 
-        {/* Render Image Only Projects */}
         {imageOnlyProjects.length > 0 && (
           <div
             className={`grid gap-4 py-8 ${
@@ -280,9 +279,9 @@ function SubPagesContent() {
           </div>
         )}
 
-        <div className="flex justify-between flex-col sm:flex-row">
+        <div className="flex justify-between flex-col sm:flex-row mx-auto w-3/4 md:w-full">
           <button
-            className={`${isPreviousDisabled && 'invisible'} project-btn  min-w-full sm:min-w-40`}
+            className={`${isPreviousDisabled && 'invisible'} project-btn min-w-full sm:min-w-40`}
             onClick={() => handleNavigation('previous')}
             disabled={isPreviousDisabled}
           >

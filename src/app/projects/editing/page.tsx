@@ -160,9 +160,9 @@ export default function SubPages() {
         className={`flex flex-col gap-10 container my-10 ${isModalOpen ? 'hidden' : ''}`}
       >
         <h2 className="text-center">Editing</h2>
-        <p className="my-10">
+        <p className="my-10 text-center">
           I have been editing videos for YouTuber Ash Meppers including his
-          TikTok account. All of these videos on his YouTube page are my works.
+          TikTok accounts.
         </p>
         <div className="grid grid-cols-12 gap-4">
           {imageProjects.map((project, index) => {
@@ -170,7 +170,7 @@ export default function SubPages() {
 
             const imageContent = (
               <div
-                className={`col-span-12 md:col-span-6 group ${isVideo ? 'cursor-pointer project-hoverable p-2' : ''}`}
+                className={`col-span-12 md:col-span-6 group mx-4 ${isVideo ? 'cursor-pointer project-hoverable p-2' : ''}`}
                 key={project.src}
                 {...(isVideo && {
                   role: 'button',
@@ -199,7 +199,7 @@ export default function SubPages() {
         {videoProject && (
           <div className="grid grid-cols-12 gap-4">
             <div
-              className="col-span-6 group cursor-pointer project-hoverable h-4/5 p-2 relative flex justify-center"
+              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-4/5 p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(videoProject.src)}
@@ -222,7 +222,7 @@ export default function SubPages() {
               </div>
             </div>
             <div
-              className="col-span-6 group cursor-pointer project-hoverable h-3/5 p-2 relative flex justify-center"
+              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-3/5 p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(secondVideoProject.src)}

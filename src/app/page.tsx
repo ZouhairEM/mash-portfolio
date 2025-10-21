@@ -231,10 +231,11 @@ export default function Home() {
             available for design collaborations and projects. Reach out to
             discuss your creative needs.
           </p>
-          <p className="mt-10">
+          <p className="mt-10 text-center">
             <a href="mailto:mohammadmashouka@gmail.com">
-              Email: mohammadmashouka@gmail.com Tel: +962792944744
+              Email: mohammadmashouka@gmail.com
             </a>
+            <span>Tel: +962792944744</span>
           </p>
           <a
             href="https://www.instagram.com/mohammadmashoukaa/"
