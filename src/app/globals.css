@@ -229,3 +229,7 @@
     text-decoration: underline;
   }
 }
+
+.ash-meppers > img {
+  object-fit: contain;
+}

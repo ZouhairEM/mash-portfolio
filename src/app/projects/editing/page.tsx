@@ -162,7 +162,7 @@ export default function SubPages() {
         <h2 className="text-center">Editing</h2>
         <p className="my-10 text-center">
           I have been editing videos for YouTuber Ash Meppers including his
-          TikTok accounts.
+          TikTok account.
         </p>
         <div className="grid grid-cols-12 gap-4">
           {imageProjects.map((project, index) => {
@@ -222,7 +222,7 @@ export default function SubPages() {
               </div>
             </div>
             <div
-              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-3/5 p-2 relative flex justify-center"
+              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable md:h-3/5 p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(secondVideoProject.src)}
@@ -237,7 +237,7 @@ export default function SubPages() {
                 alt={`YouTube Video Thumbnail`}
                 width={375}
                 height={375}
-                className="mx-auto"
+                className="mx-auto ash-meppers"
               />
               <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
                 {' '}
