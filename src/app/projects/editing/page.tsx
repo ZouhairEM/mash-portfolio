@@ -123,6 +123,14 @@ export default function SubPages() {
       src: `/editing/ash-meppers-1.mp4`,
       thumbnailSrc: `/editing/ash-meppers-thumbnail.png`,
     },
+    {
+      src: `/editing/editing-5.mp4`,
+      thumbnailSrc: `/editing/editing-nunez.png`,
+    },
+    {
+      src: `/editing/editing-6.mov`,
+      thumbnailSrc: `editing-6.png`,
+    },
   ];
 
   const imageProjects = projects.slice(0, 2);
@@ -130,7 +138,12 @@ export default function SubPages() {
 
   const secondVideoProject = {
     src: 'https://www.youtube.com/watch?v=DrM89nnNqlU',
-    thumbnailSrc: `/editing/maxresdefault.jpg`, // Placeholder, replace with actual thumbnail if needed
+    thumbnailSrc: `/editing/maxresdefault.jpg`,
+  };
+
+  const fifthVideo = {
+    src: 'https://www.youtube.com/watch?v=Ix8wp2Ks6Fk',
+    thumbnailSrc: `/editing/editing-5.jpg`,
   };
 
   return (
@@ -160,10 +173,6 @@ export default function SubPages() {
         className={`flex flex-col gap-10 container my-10 ${isModalOpen ? 'hidden' : ''}`}
       >
         <h2 className="text-center">Editing</h2>
-        <p className="my-10 text-center">
-          I have been editing videos for YouTuber Ash Meppers including his
-          TikTok account.
-        </p>
         <div className="grid grid-cols-12 gap-4">
           {imageProjects.map((project, index) => {
             const isVideo = project.src.endsWith('.mp4');
@@ -237,6 +246,75 @@ export default function SubPages() {
                 alt={`YouTube Video Thumbnail`}
                 width={375}
                 height={375}
+                className="mx-auto ash-meppers"
+              />
+              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
+                {' '}
+                Play video
+              </div>
+            </div>
+            <div
+              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-4/5 p-2 relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(projects[3].src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(videoProject.src);
+                }
+              }}
+            >
+              <AnimatedImage
+                src="/editing/editing-nunez.png"
+                alt={`Video Project Thumbnail`}
+                width={375}
+                height={375}
+                className="mx-auto"
+              />
+              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
+                {' '}
+                Play video
+              </div>
+            </div>
+            <div
+              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-4/5 p-2 relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(projects[4].src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(projects[4].src);
+                }
+              }}
+            >
+              <AnimatedImage
+                src="/editing/editing-6.png"
+                alt={`Video Project Thumbnail`}
+                width={375}
+                height={375}
+                className="mx-auto"
+              />
+              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
+                {' '}
+                Play video
+              </div>
+            </div>
+            <div
+              className="col-span-12 group cursor-pointer project-hoverable h-full p-2 relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(fifthVideo.src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(fifthVideo.src);
+                }
+              }}
+            >
+              <AnimatedImage
+                src={fifthVideo.thumbnailSrc}
+                alt={`YouTube Video Thumbnail`}
+                width={500}
+                height={500}
                 className="mx-auto ash-meppers"
               />
               <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
