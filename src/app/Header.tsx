@@ -45,31 +45,31 @@ export default function Header() {
               </div>
 
               {isProjectsOpen && (
-                <div className="absolute left-0 top-full w-48 bg-gray-800 rounded-md shadow-lg z-10 p-2">
+                <div className="dropdown absolute left-0 top-full w-48 rounded-md shadow-lg z-10 p-2">
                   <Link
                     href="/projects/graphic-design"
-                    className="block px-4 py-2 text-sm text-tertiary hover:bg-gray-700 hover:text-white rounded-md"
+                    className="block px-4 py-2 text-sm text-tertiary hover:bg-black hover:text-white rounded-md"
                     onClick={() => setIsProjectsOpen(false)}
                   >
                     Graphic Design
                   </Link>
                   <Link
                     href="/projects/editing"
-                    className="block px-4 py-2 text-sm text-tertiary hover:bg-gray-700 hover:text-white rounded-md"
+                    className="block px-4 py-2 text-sm text-tertiary hover:bg-black hover:text-white rounded-md"
                     onClick={() => setIsProjectsOpen(false)}
                   >
                     Editing
                   </Link>
                   <Link
                     href="/projects/fashion"
-                    className="block px-4 py-2 text-sm text-tertiary hover:bg-gray-700 hover:text-white rounded-md"
+                    className="block px-4 py-2 text-sm text-tertiary hover:bg-black hover:text-white rounded-md"
                     onClick={() => setIsProjectsOpen(false)}
                   >
                     Fashion
                   </Link>
                   <Link
                     href="/projects/film-making"
-                    className="block px-4 py-2 text-sm text-tertiary hover:bg-gray-700 hover:text-white rounded-md"
+                    className="block px-4 py-2 text-sm text-tertiary hover:bg-black hover:text-white rounded-md"
                     onClick={() => setIsProjectsOpen(false)}
                   >
                     Film Making

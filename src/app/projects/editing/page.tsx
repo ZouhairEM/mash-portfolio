@@ -170,11 +170,11 @@ export default function SubPages() {
       )}
 
       <main
-        className={`flex flex-col container my-10 ${isModalOpen ? 'hidden' : ''}`}
+        className={`flex flex-col container my-10  p-4 md:p-0 ${isModalOpen ? 'hidden' : ''}`}
       >
-        <h2 className="text-center">Editing</h2>
+        <h2 className="project-header text-center">Editing</h2>
         <div className="flex flex-col items-center gap-4 my-10 justify-center">
-          <p className="w-4/10 text-center">
+          <p className="w-full md:w-6/10 text-center">
             Editing is my specialty, what makes me stand outside of other
             editors is that my niche is the psychology of editing and
             understanding of social media algorithms, I know how to get the
@@ -184,127 +184,133 @@ export default function SubPages() {
           </p>
         </div>
         {videoProject && (
-          <section className="grid grid-cols-12 gap-4 mb-4 md:mb-0">
-            <div
-              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable p-2 relative flex justify-center"
-              role="button"
-              tabIndex={0}
-              onClick={() => handleOpenModal(secondVideoProject.src)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  handleOpenModal(secondVideoProject.src);
-                }
-              }}
-            >
-              <AnimatedImage
-                src={secondVideoProject.thumbnailSrc}
-                alt={`YouTube Video Thumbnail`}
-                width={375}
-                height={375}
-                className="mx-auto ash-meppers"
-              />
-              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
-                {' '}
-                Play video
+          <section className="grid grid-cols-12 gap-4 mb-12 mb:4">
+            <div className="col-span-12 md:col-span-6 ">
+              <div
+                className="group cursor-pointer project-hoverable p-2 relative flex justify-center"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleOpenModal(secondVideoProject.src)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handleOpenModal(secondVideoProject.src);
+                  }
+                }}
+              >
+                <AnimatedImage
+                  src={secondVideoProject.thumbnailSrc}
+                  alt={`YouTube Video Thumbnail`}
+                  width={500}
+                  height={500}
+                  className="mx-auto ash-meppers"
+                />
               </div>
+              <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
+                View video
+              </p>
             </div>
+
+            <div className="col-span-12 md:col-span-6 ">
+              <div
+                className="group cursor-pointer project-hoverable p-2 relative flex justify-center"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleOpenModal(fifthVideo.src)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handleOpenModal(fifthVideo.src);
+                  }
+                }}
+              >
+                <AnimatedImage
+                  src={fifthVideo.thumbnailSrc}
+                  alt={`YouTube Video Thumbnail`}
+                  width={500}
+                  height={500}
+                  className="mx-auto ash-meppers"
+                />
+              </div>
+              <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
+                View video
+              </p>
+            </div>
+          </section>
+        )}
+
+        <section className="grid grid-cols-12 gap-4 mb-4">
+          <div className="col-span-12 md:col-span-4 w-1/2 md:w-3/4 mx-auto mb-15 md:mb-0">
             <div
-              className="col-span-12 md:col-span-6 group cursor-pointer project-hoverable h-full relative flex justify-center"
+              className="group cursor-pointer project-hoverable h-full md:h-10/12 my-auto p-2 relative flex justify-center"
               role="button"
               tabIndex={0}
-              onClick={() => handleOpenModal(fifthVideo.src)}
+              onClick={() => handleOpenModal(videoProject.src)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                  handleOpenModal(fifthVideo.src);
+                  handleOpenModal(videoProject.src);
                 }
               }}
             >
               <AnimatedImage
-                src={fifthVideo.thumbnailSrc}
+                src={videoProject.thumbnailSrc}
                 alt={`Video Project Thumbnail`}
                 width={375}
                 height={375}
                 className="mx-auto"
               />
-              <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
-                {' '}
-                Play video
-              </div>
             </div>
-          </section>
-        )}
-
-        <section className="grid grid-cols-12 gap-4 mb-4 md:mb-0">
-          <div
-            className="col-span-12 md:col-span-4 group cursor-pointer project-hoverable h-full md:h-4/5 my-auto p-2 relative flex justify-center"
-            role="button"
-            tabIndex={0}
-            onClick={() => handleOpenModal(videoProject.src)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleOpenModal(videoProject.src);
-              }
-            }}
-          >
-            <AnimatedImage
-              src={videoProject.thumbnailSrc}
-              alt={`Video Project Thumbnail`}
-              width={375}
-              height={375}
-              className="mx-auto"
-            />
-            <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
-              {' '}
-              Play video
-            </div>
+            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
+              View video
+            </p>
           </div>
 
-          <div
-            className="col-span-12 md:col-span-4 group cursor-pointer project-hoverable h-full md:h-4/5 my-auto p-2 relative flex justify-center"
-            role="button"
-            tabIndex={0}
-            onClick={() => handleOpenModal(projects[1].src)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleOpenModal(videoProject.src);
-              }
-            }}
-          >
-            <AnimatedImage
-              src="/editing/editing-nunez.png"
-              alt={`Video Project Thumbnail`}
-              width={375}
-              height={375}
-              className="mx-auto"
-            />
-            <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
-              {' '}
-              Play video
+          <div className="col-span-12 md:col-span-4 w-1/2 md:w-3/4 mx-auto mb-15 md:mb-0">
+            <div
+              className="group cursor-pointer project-hoverable h-full md:h-10/12 my-auto p-2 relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(projects[1].src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(videoProject.src);
+                }
+              }}
+            >
+              <AnimatedImage
+                src="/editing/editing-nunez.png"
+                alt={`Video Project Thumbnail`}
+                width={375}
+                height={375}
+                className="mx-auto"
+              />
             </div>
+            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
+              View video
+            </p>
           </div>
 
-          <div
-            className="col-span-12 md:col-span-4 group cursor-pointer project-hoverable h-full md:h-4/5 my-auto relative flex justify-center"
-            role="button"
-            tabIndex={0}
-            onClick={() => handleOpenModal(projects[4].src)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleOpenModal(projects[4].src);
-              }
-            }}
-          >
-            <AnimatedImage
-              src="/editing/editing-6.png"
-              alt={`Video Project Thumbnail`}
-              width={375}
-              height={375}
-              className="mx-auto"
-            />
-            <div className="absolute bottom-0.5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full max-w-[375px] text-center">
-              {' '}
-              Play video
+          <div className="col-span-12 md:col-span-4 w-1/2 md:w-3/4 mx-auto mb-15 md:mb-0">
+            <div
+              className="group cursor-pointer project-hoverable h-full md:h-10/12 my-auto relative flex justify-center"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(projects[4].src)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(projects[4].src);
+                }
+              }}
+            >
+              <AnimatedImage
+                src="/editing/editing-6.png"
+                alt={`Video Project Thumbnail`}
+                width={375}
+                height={375}
+                className="mx-auto"
+              />
             </div>
+            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
+              View video
+            </p>
           </div>
         </section>
 
@@ -314,7 +320,7 @@ export default function SubPages() {
 
             const imageContent = (
               <div
-                className={`col-span-12 md:col-span-6 group ${isVideo ? 'cursor-pointer project-hoverable p-2' : ''}`}
+                className={`ash-youtube col-span-12 md:col-span-6 group ${isVideo ? 'cursor-pointer project-hoverable p-2' : ''}`}
                 key={project.src}
                 {...(isVideo && {
                   role: 'button',

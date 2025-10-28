@@ -194,35 +194,9 @@ export default function FilmMaking() {
               </div>
             </div>
 
-            {/* Project 2: Dana Salah (YouTube Video) */}
+            {/* Project 2: Ingot Brokers (Local Video - back to .mp4) */}
             <div
               className="flex justify-center cursor-pointer sm:col-span-12 md:col-span-6 project-hoverable p-2"
-              role="button"
-              tabIndex={0}
-              onClick={() => handleOpenModal(DANA_SALAH_YOUTUBE_URL)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  handleOpenModal(DANA_SALAH_YOUTUBE_URL);
-                }
-              }}
-            >
-              <div className="flex flex-col gap-4">
-                <AnimatedImage
-                  src={'/filmmaking/film-making-3.avif'}
-                  alt="Dana Salah"
-                  width={500}
-                  height={500}
-                />
-                <p className="text-center mb-2">View now</p>
-                <p className="text-center">
-                  Art department for Dana Salah music video
-                </p>
-              </div>
-            </div>
-
-            {/* Project 3: Ingot Brokers (Local Video - back to .mp4) */}
-            <div
-              className="flex justify-center cursor-pointer sm:col-span-12 project-hoverable p-2"
               role="button"
               tabIndex={0}
               onClick={createClickHandlerForMp4(
@@ -245,6 +219,32 @@ export default function FilmMaking() {
                 <p className="text-center">
                   An advertisement for Ingot brokers with Raphael Varane where I
                   was assistant producer.
+                </p>
+              </div>
+            </div>
+
+            {/* Project 3: Dana Salah (YouTube Video) */}
+            <div
+              className="flex justify-center cursor-pointer col-span-12 project-hoverable p-2"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleOpenModal(DANA_SALAH_YOUTUBE_URL)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleOpenModal(DANA_SALAH_YOUTUBE_URL);
+                }
+              }}
+            >
+              <div className="flex flex-col gap-4">
+                <AnimatedImage
+                  src={'/filmmaking/film-making-3.avif'}
+                  alt="Dana Salah"
+                  width={500}
+                  height={500}
+                />
+                <p className="text-center mb-2">View now</p>
+                <p className="text-center">
+                  Art department for Dana Salah music video
                 </p>
               </div>
             </div>
