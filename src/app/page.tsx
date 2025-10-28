@@ -44,59 +44,9 @@ export default function Home() {
           id="projects"
           className="flex flex-col items-center justify-center"
         >
-          <h2 className="pt-20 uppercase">Projects</h2>
-          <div className="flex justify-center items-center gap-4 mb-10">
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              data-bbox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-              width="10"
-              height="10"
-              viewBox="0 0 200 200"
-              role="presentation"
-              aria-hidden="true"
-            >
-              <g>
-                <path
-                  fill="white"
-                  d="M200 100c0 55.228-44.772 100-100 100S0 155.228 0 100 44.772 0 100 0s100 44.772 100 100z"
-                ></path>
-              </g>
-            </svg>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              data-bbox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-              width="10"
-              height="10"
-              viewBox="0 0 200 200"
-              role="presentation"
-              aria-hidden="true"
-            >
-              <g>
-                <path
-                  fill="white"
-                  d="M200 100c0 55.228-44.772 100-100 100S0 155.228 0 100 44.772 0 100 0s100 44.772 100 100z"
-                ></path>
-              </g>
-            </svg>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              data-bbox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-              width="10"
-              height="10"
-              viewBox="0 0 200 200"
-              role="presentation"
-              aria-hidden="true"
-            >
-              <g>
-                <path
-                  fill="white"
-                  d="M200 100c0 55.228-44.772 100-100 100S0 155.228 0 100 44.772 0 100 0s100 44.772 100 100z"
-                ></path>
-              </g>
-            </svg>
+          <div>
+            <h2 className="pt-20 uppercase">Projects</h2>
+            <div className="w-full h-px bg-white mb-10"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link href="/projects/graphic-design">
@@ -235,6 +185,7 @@ export default function Home() {
             <a href="mailto:mohammadmashouka@gmail.com">
               Email: mohammadmashouka@gmail.com
             </a>
+            <br />
             <span>Tel: +962792944744</span>
           </p>
           <a

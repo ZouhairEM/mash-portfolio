@@ -89,6 +89,8 @@
     background-position: center;
     color: white;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     & .credit-roll {
       position: absolute;
