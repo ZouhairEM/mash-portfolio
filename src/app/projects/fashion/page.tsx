@@ -20,6 +20,8 @@ interface AnimatedImageProps {
   width: number;
   height: number;
   className?: string;
+  // Prop to control the animation trigger
+  animateOnView?: boolean;
 }
 
 function AnimatedImage({
@@ -28,6 +30,7 @@ function AnimatedImage({
   width,
   height,
   className,
+  animateOnView = true, // Default to true
 }: AnimatedImageProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 }); // Trigger when 20% visible
@@ -37,12 +40,19 @@ function AnimatedImage({
     visible: { y: 0, opacity: 1 },
   };
 
+  // Determine animation state
+  const animateState = animateOnView
+    ? isInView
+      ? 'visible'
+      : 'hidden'
+    : 'visible';
+
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      initial={animateOnView ? 'hidden' : 'visible'} // Only initial "hidden" if animating on view
+      animate={animateState}
       variants={variants}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
@@ -82,10 +92,10 @@ function ImageModal({ images, initialImageIndex, onClose }: ImageModalProps) {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 1 }}
+        initial={{ opacity: 0 }} // Changed from 1 to 0 for initial
         animate={{ opacity: 1 }}
-        exit={{ opacity: 1 }}
-        className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center p-4"
+        exit={{ opacity: 0 }} // Changed from 1 to 0 for exit
+        className="fixed inset-0 z-50 bg-black/60 flex flex-col items-center justify-center p-4"
         onClick={onClose} // Close on click outside the content area
       >
         <button
@@ -190,7 +200,7 @@ export default function Fashion() {
 
   return (
     <>
-      {!isModalOpen && (
+      <div className={isModalOpen ? 'pointer-events-none' : ''}>
         <Link href="/">
           <button className="back flex items-center justify-around gap-2">
             <svg
@@ -209,9 +219,13 @@ export default function Fashion() {
             <span>Back</span>
           </button>
         </Link>
-      )}
+      </div>
 
-      <div className={isModalOpen ? 'hidden' : ''}>
+      <div
+        className={
+          isModalOpen ? 'opacity-50 transition-opacity duration-300' : ''
+        }
+      >
         <h2 className="project-header text-center">Fashion</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
           <div className="flex flex-col items-center gap-4 my-10 justify-center">
@@ -231,12 +245,16 @@ export default function Fashion() {
             {FASHION_IMAGE_SRCS.map((src, index) => (
               <div
                 key={index}
-                className="sm:col-span-12 md:col-span-6 cursor-pointer project-hoverable"
+                className={`sm:col-span-12 md:col-span-6 ${
+                  isModalOpen
+                    ? 'cursor-default'
+                    : 'cursor-pointer project-hoverable'
+                }`}
                 role="button"
-                tabIndex={0}
-                onClick={() => handleOpenModal(index)}
+                tabIndex={isModalOpen ? -1 : 0}
+                onClick={isModalOpen ? undefined : () => handleOpenModal(index)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
+                  if (!isModalOpen && (e.key === 'Enter' || e.key === ' ')) {
                     handleOpenModal(index);
                   }
                 }}
@@ -247,6 +265,8 @@ export default function Fashion() {
                   width={750}
                   height={750}
                   className="w-full h-full"
+                  // Disable the in-view animation when the modal is open
+                  animateOnView={!isModalOpen}
                 />
               </div>
             ))}
