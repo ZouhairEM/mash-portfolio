@@ -164,10 +164,10 @@ export default function FilmMaking() {
       <div className={isModalOpen ? 'hidden' : ''}>
         <h2 className="project-header text-center">Film Making</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
-          <div className="grid md:grid-cols-12 my-10 gap-8">
+          <div className="grid grid-cols-12 my-10 gap-8">
             {/* Project 1: Crown Prince Foundation (Local Video) */}
             <div
-              className="flex justify-center cursor-pointer sm:col-span-12 md:col-span-6 project-hoverable p-2"
+              className="flex justify-center cursor-pointer col-span-12 md:col-span-6 project-hoverable p-2"
               role="button"
               tabIndex={0}
               onClick={createClickHandlerForMp4(
@@ -196,7 +196,7 @@ export default function FilmMaking() {
 
             {/* Project 2: Ingot Brokers (Local Video - back to .mp4) */}
             <div
-              className="flex justify-center cursor-pointer sm:col-span-12 md:col-span-6 project-hoverable p-2"
+              className="flex justify-center cursor-pointer col-span-12 md:col-span-6 project-hoverable p-2"
               role="button"
               tabIndex={0}
               onClick={createClickHandlerForMp4(
@@ -251,7 +251,7 @@ export default function FilmMaking() {
 
             {/* Project 4: Mazaya (Local Video) */}
             <div
-              className="flex justify-center cursor-pointer sm:col-span-12 md:col-span-6 project-hoverable p-2"
+              className="flex justify-center cursor-pointer col-span-12 md:col-span-6 project-hoverable p-2"
               role="button"
               tabIndex={0}
               onClick={createClickHandlerForMp4(
@@ -280,7 +280,7 @@ export default function FilmMaking() {
 
             {/* Project 5: World Cup Campaign (Local Video) */}
             <div
-              className="flex justify-center cursor-pointer sm:col-span-12 md:col-span-6 project-hoverable p-2"
+              className="flex justify-center cursor-pointer col-span-12 md:col-span-6 project-hoverable p-2"
               role="button"
               tabIndex={0}
               onClick={createClickHandlerForMp4(

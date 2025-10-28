@@ -245,7 +245,7 @@ export default function Fashion() {
             {FASHION_IMAGE_SRCS.map((src, index) => (
               <div
                 key={index}
-                className={`sm:col-span-12 md:col-span-6 ${
+                className={`col-span-12 md:col-span-6 ${
                   isModalOpen
                     ? 'cursor-default'
                     : 'cursor-pointer project-hoverable'
