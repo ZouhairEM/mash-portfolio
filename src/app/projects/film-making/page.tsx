@@ -179,13 +179,14 @@ export default function FilmMaking() {
                 }
               }}
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 <AnimatedImage
                   src={'/filmmaking/film-making-1.avif'}
                   alt="Picture of the Palestinian flag"
                   width={500}
                   height={500}
                 />
+                <p className="text-center mb-2">View now</p>
                 <p className="text-center">
                   An advertisement for the Crown Prince Foundation where I was
                   assistant producer.
@@ -205,13 +206,14 @@ export default function FilmMaking() {
                 }
               }}
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 <AnimatedImage
                   src={'/filmmaking/film-making-3.avif'}
                   alt="Dana Salah"
                   width={500}
                   height={500}
                 />
+                <p className="text-center mb-2">View now</p>
                 <p className="text-center">
                   Art department for Dana Salah music video
                 </p>
@@ -232,13 +234,14 @@ export default function FilmMaking() {
                 }
               }}
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 <AnimatedImage
                   src={'/filmmaking/film-making-2.avif'}
                   alt="Picture of a canyon"
                   width={500}
                   height={500}
                 />
+                <p className="text-center mb-2">View now</p>
                 <p className="text-center">
                   An advertisement for Ingot brokers with Raphael Varane where I
                   was assistant producer.
@@ -260,7 +263,7 @@ export default function FilmMaking() {
                 }
               }}
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 <AnimatedImage
                   src={'/filmmaking/film-making-4.avif'}
                   alt="Picture of shisha guys"
@@ -268,6 +271,7 @@ export default function FilmMaking() {
                   height={275}
                   className="mx-auto"
                 />
+                <p className="text-center mb-2">View now</p>
                 <p className="text-center">
                   Assistant Producer and extra for Mazaya
                 </p>
@@ -288,7 +292,7 @@ export default function FilmMaking() {
                 }
               }}
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 <AnimatedImage
                   src={'/filmmaking/film-making-5.avif'}
                   alt="Picture of Girl with French celebrations"
@@ -296,6 +300,7 @@ export default function FilmMaking() {
                   height={275}
                   className="mx-auto"
                 />
+                <p className="text-center mb-2">View now</p>
                 <p className="text-center">World Cup campaign.</p>
               </div>
             </div>

@@ -63,7 +63,7 @@ export default function Fashion() {
           <span>Back</span>
         </button>
       </Link>
-      <h2 className="project-header text-center">Fashion</h2>
+      <h2 className="text-center">Fashion</h2>
       <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
         <div className="flex flex-col items-center gap-4 my-10 justify-center">
           <p className="w-4/10 text-center">
