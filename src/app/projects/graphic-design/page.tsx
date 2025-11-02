@@ -31,7 +31,7 @@ const PROJECT_CONTENT_MAP = {
     content: [
       {
         title: 'First Teaser',
-        body: 'First teaser for the exhibition.',
+        body: 'This is a campaign made for an art charity exhibition called “Art for a cause” and this the first poster that would be put out around town as a teaser.',
         src: '/graphic-design/illustrations/graphic-design-1.avif',
       },
       {
@@ -77,7 +77,7 @@ const PROJECT_CONTENT_MAP = {
     ],
   },
   moodboards: {
-    projectHeader: 'Moodboards',
+    projectHeader: 'Packaging and Product',
     content: [
       {
         title: 'Disposable Matte',
@@ -420,7 +420,7 @@ export default function GraphicDesign() {
       >
         <h2 className="project-header text-center">Graphic Design</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:grid-rows-4 p-6">
+          <div className="grid grid-cols-4 md:grid-cols-6 gap-8 md:grid-rows-3 p-6 project-thumbnail">
             {PROJECT_GRID_CONFIG.map(({ project, className }, index) => {
               const projectData = PROJECT_CONTENT_MAP[project];
               const firstImageSrc = projectData.content[0]?.src || '';
@@ -428,7 +428,7 @@ export default function GraphicDesign() {
               return (
                 <div
                   key={project}
-                  className={`${className} cursor-pointer project-hoverable`}
+                  className={`${className} cursor-pointer project-hoverable mb-4`}
                   role="button"
                   tabIndex={isModalOpen ? -1 : 0}
                   onClick={() => handleOpenModal(project)}
@@ -445,6 +445,7 @@ export default function GraphicDesign() {
                     height={750}
                     className="w-full h-full"
                   />
+                  <p className="text-center">View project</p>
                 </div>
               );
             })}

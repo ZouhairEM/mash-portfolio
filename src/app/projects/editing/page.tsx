@@ -117,7 +117,7 @@ export default function SubPages() {
       src: `/editing/ash-meppers-1.png`,
     },
     {
-      src: `/editing/ash-meppers-2.png`,
+      src: `/editing/ash-meppers-3.png`,
     },
     {
       src: `/editing/ash-meppers-1.mp4`,

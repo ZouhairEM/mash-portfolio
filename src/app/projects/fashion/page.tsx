@@ -229,13 +229,13 @@ export default function Fashion() {
         <h2 className="project-header text-center">Fashion</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
           <div className="flex flex-col items-center gap-4 my-10 justify-center">
-            <p className="w-6/10 text-center">
+            <p className="w-4/10 text-center">
               My participation of a fashion show where every designer was meant
               to capture the essence of a country, my designs were to capture
               the essence of Egypt through the daily used demotic hieroglyphics
               for the men attire.
             </p>
-            <p className="w-6/10 text-center">
+            <p className="w-4/10 text-center">
               As for the woman I captured the glory of the most powerful woman
               in history Kleopatra in a modern business outfit that shows power.
             </p>

@@ -35,6 +35,23 @@ export default function Home() {
               <span className="flex justify-center items-center flex-col">
                 <span>MOHAMMAD MASHOUKA</span>
                 <span>DESIGNER - ARTIST</span>
+                <svg
+                  preserveAspectRatio="xMidYMid meet"
+                  data-bbox="19 56 162 89"
+                  version="1.1"
+                  width={30}
+                  height={30}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="19 56 162 89"
+                  className="chevron-down mt-4"
+                >
+                  <g>
+                    <polygon
+                      fill="white"
+                      points="100,145 19,64 27,56 100,128 173,56 181,64"
+                    ></polygon>
+                  </g>
+                </svg>
               </span>
             </motion.div>
           </div>
