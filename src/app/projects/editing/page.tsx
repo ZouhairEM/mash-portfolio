@@ -205,9 +205,7 @@ export default function SubPages() {
                   className="mx-auto ash-meppers"
                 />
               </div>
-              <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
-                View video
-              </p>
+              <p className="text-center">View video</p>
             </div>
 
             <div className="col-span-12 md:col-span-6 ">
@@ -230,9 +228,7 @@ export default function SubPages() {
                   className="mx-auto ash-meppers"
                 />
               </div>
-              <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
-                View video
-              </p>
+              <p className="text-center">View video</p>
             </div>
           </section>
         )}
@@ -258,9 +254,7 @@ export default function SubPages() {
                 className="mx-auto"
               />
             </div>
-            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
-              View video
-            </p>
+            <p className="text-center">View video</p>
           </div>
 
           <div className="col-span-12 md:col-span-4 w-1/2 md:w-3/4 mx-auto mb-15 md:mb-0">
@@ -283,9 +277,7 @@ export default function SubPages() {
                 className="mx-auto"
               />
             </div>
-            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
-              View video
-            </p>
+            <p className="text-center">View video</p>
           </div>
 
           <div className="col-span-12 md:col-span-4 w-1/2 md:w-3/4 mx-auto mb-15 md:mb-0">
@@ -308,9 +300,7 @@ export default function SubPages() {
                 className="mx-auto"
               />
             </div>
-            <p className="z-10 mx-auto text-white text-2xl font-bold w-full max-w-[375px] text-center mt-4">
-              View video
-            </p>
+            <p className="text-center">View video</p>
           </div>
         </section>
 

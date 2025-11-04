@@ -94,9 +94,9 @@
 
     & .credit-roll {
       position: absolute;
-      top: 50%;
+      top: 60%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -60%);
       text-align: center;
     }
 
@@ -114,9 +114,9 @@
 
   #portfolio > h1 {
     position: absolute;
-    top: -20%;
+    bottom: 60%;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -60%);
   }
 
   h1 {
@@ -224,7 +224,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.15s ease-in-out;
   overflow: hidden;
 }
@@ -247,4 +247,15 @@
 .ash-youtube {
   height: -webkit-fill-available;
   object-fit: cover;
+}
+
+.project-modal-dark {
+  background-color: #051804;
+  border: none;
+}
+.project-modal-dark > div > div > p {
+  color: white;
+}
+.project-modal-dark > div > div > h3 {
+  color: white;
 }

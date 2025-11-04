@@ -5,7 +5,22 @@ import Link from 'next/link';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 
-const PROJECT_CONTENT_MAP = {
+// --- TYPE DEFINITION UPDATE ---
+// Defining the structure for project content items
+interface ProjectContentItem {
+  title: string;
+  body: string;
+  src: string;
+}
+
+// Defining the structure for the main project content map entries
+interface ProjectContentEntry {
+  projectHeader: string;
+  content: ProjectContentItem[];
+  addProjectModalDark?: boolean; // New optional property
+}
+
+const PROJECT_CONTENT_MAP: Record<string, ProjectContentEntry> = {
   bmw: {
     projectHeader: 'Concept Advertisements',
     content: [
@@ -26,12 +41,49 @@ const PROJECT_CONTENT_MAP = {
       },
     ],
   },
+  moodboards: {
+    projectHeader: 'Packaging and Product',
+    content: [
+      {
+        title: 'Disposable Matte',
+        body: 'This is an instant cup of matte drink where you pour hot water in it and drink straight out of the cup, it is made of bambo so it is biodegradable.',
+        src: '/graphic-design/moodboards/moodboards-2.avif',
+      },
+      {
+        title: 'Cereal Box Packaging',
+        body: 'This is a concept package for a cereal which makes it easier to pour cereal as well as the box itself is reusable.',
+        src: '/graphic-design/moodboards/moodboards-1.avif',
+      },
+    ],
+  },
+  nike: {
+    projectHeader: 'Nike Announcement',
+    content: [
+      {
+        title: 'Concept Announcement',
+        body: 'This is a concept announcement for Nike when they announced they are stopped using kangaroo skin in their leather shoes.',
+        src: '/graphic-design/nike/graphic-design-1.avif',
+      },
+    ],
+    addProjectModalDark: true, // ADDED: Conditional class for Nike
+  },
+  hamdulilah: {
+    projectHeader: 'Typography',
+    content: [
+      {
+        title: 'Al Hamdulilah Typography',
+        body: 'This typography piece has won in the Typography Day 2023 titled "Al Hamdulilah" which means "Thank God" in Arabic. This is one of the most powerful sayings in Arabic culture I wanted to highlight its importance. The red chain symbolizes the difficulties of life and how it\'s a never ending chain, the black \'Al Hamdulilah\' is showing its power to thank God even in the harshest of times making the difficulties smaller and appreciate the little things.',
+        src: '/graphic-design/hamdulilah/graphic-design-1.avif',
+      },
+    ],
+    addProjectModalDark: true, // ADDED: Conditional class for Nike
+  },
   illustrations: {
     projectHeader: 'AFC Campaign',
     content: [
       {
         title: 'First Teaser',
-        body: 'This is a campaign made for an art charity exhibition called “Art for a cause” and this the first poster that would be put out around town as a teaser.',
+        body: 'This is a campaign made for an art charity exhibition called â€œArt for a causeâ€ and this is the first poster that would be put out around town as a teaser.',
         src: '/graphic-design/illustrations/graphic-design-1.avif',
       },
       {
@@ -55,52 +107,19 @@ const PROJECT_CONTENT_MAP = {
         src: '/graphic-design/illustrations/graphic-design-5.avif',
       },
     ],
-  },
-  nike: {
-    projectHeader: 'Nike Announcement',
-    content: [
-      {
-        title: 'Concept Announcement',
-        body: 'This is a concept announcement for Nike when they announced they are stopped using kangaroo skin in their leather shoes.',
-        src: '/graphic-design/nike/graphic-design-1.avif',
-      },
-    ],
-  },
-  hamdulilah: {
-    projectHeader: 'Typography',
-    content: [
-      {
-        title: 'Al Hamdulilah Typography',
-        body: 'This typography piece has won in the Typography Day 2023 titled "Al Hamdulilah" which means "Thank God" in Arabic. This is one of the most powerful sayings in Arabic culture I wanted to highlight its importance. The red chain symbolizes the difficulties of life and how it\'s a never ending chain, the black \'Al Hamdulilah\' is showing its power to thank God even in the harshest of times making the difficulties smaller and appreciate the little things.',
-        src: '/graphic-design/hamdulilah/graphic-design-1.avif',
-      },
-    ],
-  },
-  moodboards: {
-    projectHeader: 'Packaging and Product',
-    content: [
-      {
-        title: 'Disposable Matte',
-        body: 'This is an instant cup of matte drink where you pour hot water in it and drink straight out of the cup, it is made of bambo so it is biodegradable.',
-        src: '/graphic-design/moodboards/moodboards-1.avif',
-      },
-      {
-        title: 'Cereal Box Packaging',
-        body: 'This is a concept package for a cereal which makes it easier to pour cereal as well as the box itself is reusable.',
-        src: '/graphic-design/moodboards/moodboards-2.avif',
-      },
-    ],
+    addProjectModalDark: true, // ADDED: Conditional class for Nike
   },
 };
 
 const PROJECT_GRID_CONFIG = [
   { project: 'bmw', className: 'col-span-2 row-span-1' },
-  { project: 'nike', className: 'col-span-2 row-span-2' },
-  { project: 'hamdulilah', className: 'col-span-2 row-span-3' },
-  { project: 'illustrations', className: 'col-span-2 row-span-4' },
   { project: 'moodboards', className: 'col-span-2 row-span-1' },
+  { project: 'nike', className: 'col-span-2 row-span-1' },
+  { project: 'hamdulilah', className: 'col-span-2 row-span-1' },
+  { project: 'illustrations', className: 'col-span-2 row-span-1' },
 ] as const;
 
+// ... (ChevronLeft and ChevronRight components remain the same)
 const ChevronLeft = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +191,7 @@ function AnimatedImage({
         alt={alt}
         width={width}
         height={height}
-        className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-100"
+        className="w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-100"
       />
     </motion.div>
   );
@@ -195,6 +214,8 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
   const selectedProjectInfo = PROJECT_CONTENT_MAP[currentProjectName];
   const chosenProjectContent = selectedProjectInfo.content;
   const chosenProjectHeader = selectedProjectInfo.projectHeader;
+  const isDarkModal = selectedProjectInfo.addProjectModalDark; // GETTING THE NEW PROPERTY
+
   const totalSlides = chosenProjectContent.length;
   const currentSlide = chosenProjectContent[currentSlideIndex];
 
@@ -233,6 +254,12 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
     'absolute top-1/2 transform -translate-y-1/2 p-3 sm:p-4 bg-gray-800/70 text-white rounded-full transition-all duration-300 z-10 hover:bg-gray-700 active:scale-95 shadow-lg backdrop-blur-sm';
   const disabledNavClasses = 'opacity-0 pointer-events-none';
 
+  // --- CONDITIONAL CLASS LOGIC ---
+  const modalContentClasses = `relative p-6 bg-white flex flex-col justify-center rounded-xl shadow-2xl border border-gray-200 min-h-[50vh] ${
+    isDarkModal ? 'project-modal-dark' : '' // APPLYING THE CONDITIONAL CLASS
+  }`;
+  // ---------------------------------
+
   return (
     <AnimatePresence>
       <motion.div
@@ -264,7 +291,7 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
         </button>
 
         <div
-          className="w-full max-w-5xl overlay"
+          className="w-full max-w-6xl overlay"
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className="text-center text-white mb-8">{chosenProjectHeader}</h2>
@@ -276,10 +303,10 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="relative p-6 bg-white flex flex-col justify-center rounded-xl shadow-2xl border border-gray-200 min-h-[50vh]"
+                className={modalContentClasses} // USING THE CONDITIONAL CLASS VARIABLE
               >
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                  <div className="w-full md:w-2/3 flex justify-center items-center order-1">
+                  <div className="w-full flex justify-center items-center order-1">
                     <Image
                       src={
                         currentSlide.src ||
@@ -420,7 +447,7 @@ export default function GraphicDesign() {
       >
         <h2 className="project-header text-center">Graphic Design</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
-          <div className="grid grid-cols-4 md:grid-cols-6 gap-8 md:grid-rows-3 p-6 project-thumbnail">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-6 project-thumbnail">
             {PROJECT_GRID_CONFIG.map(({ project, className }, index) => {
               const projectData = PROJECT_CONTENT_MAP[project];
               const firstImageSrc = projectData.content[0]?.src || '';
