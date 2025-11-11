@@ -162,7 +162,7 @@ export default function FilmMaking() {
       )}
 
       <div className={isModalOpen ? 'hidden' : ''}>
-        <h2 className="project-header text-center">Film Making</h2>
+        <h2 className="project-header text-center">Filmmaking</h2>
         <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0 mx-auto">
           <div className="grid grid-cols-12 my-10 gap-8">
             {/* Project 1: Crown Prince Foundation (Local Video) */}

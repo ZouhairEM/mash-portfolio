@@ -117,10 +117,10 @@ export default function Home() {
                 role="button"
                 tabIndex={0}
               >
-                <span className="">Film Making</span>
+                <span className="">Filmmaking</span>
                 <Image
                   src={'/projects-4.avif'}
-                  alt="Image of the Film making project"
+                  alt="Image of the Filmmaking project"
                   width={500}
                   height={500}
                 />

@@ -72,7 +72,7 @@ export default function Header() {
                     className="block px-4 py-2 text-sm text-tertiary hover:bg-black hover:text-white rounded-md"
                     onClick={() => setIsProjectsOpen(false)}
                   >
-                    Film Making
+                    Filmmaking
                   </Link>
                 </div>
               )}

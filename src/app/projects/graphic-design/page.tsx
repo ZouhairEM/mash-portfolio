@@ -83,7 +83,7 @@ const PROJECT_CONTENT_MAP: Record<string, ProjectContentEntry> = {
     content: [
       {
         title: 'First Teaser',
-        body: 'This is a campaign made for an art charity exhibition called â€œArt for a causeâ€ and this is the first poster that would be put out around town as a teaser.',
+        body: 'This is a campaign made for an art charity exhibition called Art for a cause and this is the first poster that would be put out around town as a teaser.',
         src: '/graphic-design/illustrations/graphic-design-1.avif',
       },
       {
