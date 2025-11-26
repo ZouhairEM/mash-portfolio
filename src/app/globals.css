@@ -113,10 +113,11 @@
   }
 
   #portfolio > h1 {
-    position: absolute;
-    bottom: 60%;
-    left: 50%;
-    transform: translate(-50%, -60%);
+    margin-top: -10rem;
+    /* position: absolute; */
+    /* bottom: 60%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -60%); */
   }
 
   h1 {
