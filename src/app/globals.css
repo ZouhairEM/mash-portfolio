@@ -260,3 +260,7 @@
 .project-modal-dark > div > div > h3 {
   color: white;
 }
+
+.video-modal {
+  background-color: black;
+}

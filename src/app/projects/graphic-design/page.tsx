@@ -255,7 +255,7 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
   const disabledNavClasses = 'opacity-0 pointer-events-none';
 
   // --- CONDITIONAL CLASS LOGIC ---
-  const modalContentClasses = `relative p-6 bg-white flex flex-col justify-center rounded-xl shadow-2xl border border-gray-200 min-h-[50vh] ${
+  const modalContentClasses = `relative p-6 flex flex-col justify-center rounded-xl shadow-2xl border border-gray-200 min-h-[50vh] video-modal ${
     isDarkModal ? 'project-modal-dark' : '' // APPLYING THE CONDITIONAL CLASS
   }`;
   // ---------------------------------
@@ -321,13 +321,13 @@ function ProjectModal({ initialProjectName, onClose }: ProjectModalProps) {
 
                   <div className="w-full md:w-1/3 flex flex-col justify-center order-2">
                     {currentSlide.title && (
-                      <h3 className="text-3xl font-bold mb-4 text-gray-900 border-b pb-2 border-gray-200">
+                      <h3 className="text-3xl font-bold mb-4 border-b pb-2 border-gray-200 text-white">
                         {currentSlide.title}
                       </h3>
                     )}
                     {currentSlide.body && (
                       <p
-                        className="text-gray-700 leading-relaxed"
+                        className="font-white leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: currentSlide.body }}
                       />
                     )}
