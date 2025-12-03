@@ -203,14 +203,14 @@ function FilmProjectModal({
         controls
         autoPlay
         loop
-        className="w-full h-[500px] object-contain rounded-lg shadow-xl"
+        className="w-full h-[800px] object-contain rounded-lg shadow-xl"
       >
         Your browser does not support the video tag.
       </video>
     );
   }
 
-  const modalContentClasses = `relative p-6 bg-white flex flex-col rounded-xl shadow-2xl border border-gray-200 min-h-[50vh]`;
+  const modalContentClasses = `relative p-6 flex flex-col rounded-xl shadow-2xl border border-gray-200 min-h-[50vh] video-modal`;
 
   return (
     <AnimatePresence>
@@ -260,13 +260,10 @@ function FilmProjectModal({
                 {videoContent}
 
                 <div className="w-full flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900 border-b pb-2 border-gray-200">
+                  <h3 className="text-3xl font-bold mb-4 border-b pb-2 border-gray-200 text-white text-white">
                     {chosenProjectHeader}
                   </h3>
-                  <p
-                    className="text-gray-700 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: chosenDescription }}
-                  />
+                  <p dangerouslySetInnerHTML={{ __html: chosenDescription }} />
                 </div>
               </div>
             </motion.div>

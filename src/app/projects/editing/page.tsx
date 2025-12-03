@@ -214,7 +214,7 @@ function EditingProjectModal({
     );
   }
 
-  const modalContentClasses = `relative p-6 bg-white flex flex-col rounded-xl shadow-2xl border border-gray-200 min-h-[50vh]`;
+  const modalContentClasses = `relative p-6 flex flex-col rounded-xl shadow-2xl border border-gray-200 min-h-[50vh] video-modal`;
 
   return (
     <AnimatePresence>
@@ -260,7 +260,7 @@ function EditingProjectModal({
               transition={{ duration: 0.3 }}
               className={modalContentClasses}
             >
-              <div className="flex flex-col gap-8 w-full h-[500px] max-w-2xl mx-auto">
+              <div className="flex flex-col justify-center gap-8 w-full h-[800px] max-w-2xl mx-auto">
                 {' '}
                 {/* Reduced from max-w-4xl */}
                 {videoContent}
