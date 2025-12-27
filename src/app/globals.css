@@ -1,6 +1,5 @@
 @layer base, projects;
 @import 'tailwindcss';
-
 @layer base {
   :root {
     --background: #051804;
